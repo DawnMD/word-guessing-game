@@ -99,7 +99,7 @@ class App extends Component {
     this.setState(this.initialState());
   };
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className='m-4 flex flex-col justify-items-center items-center content-between'>
         <h1 className='text-center text-4xl font-bold p-2 my-2'>
