@@ -37,6 +37,22 @@ const words = [
     ],
   },
   {
+    category: "vegetable",
+    words: [
+      "carrot",
+      "beetroot",
+      "onion",
+      "tomato",
+      "potato",
+      "cabbage",
+      "cauliflower",
+      "corn",
+      "cucumber",
+      "garlic",
+      "ginger",
+    ],
+  },
+  {
     category: "bird",
     words: [
       "crow",
@@ -47,6 +63,25 @@ const words = [
       "peacock",
       "penguin",
       "sparrow",
+    ],
+  },
+  {
+    category: "fruit",
+    words: [
+      "apple",
+      "grapes",
+      "banana",
+      "cherry",
+      "avocado",
+      "strawberry",
+      "guava",
+      "jackfruit",
+      "mango",
+      "orange",
+      "papaya",
+      "pineapple",
+      "pomegranate",
+      "watermelon",
     ],
   },
 ];

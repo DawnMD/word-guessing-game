@@ -6,6 +6,7 @@ import Word from "./components/Word";
 import GameResult from "./components/GameResult";
 import GuessRemaining from "./components/GuessRemaining";
 import ActionButton from "./components/ActionButton";
+import WordImage from "./components/WordImage";
 class App extends Component {
   state = this.initialState();
   initialState() {
@@ -18,7 +19,8 @@ class App extends Component {
     const guessedLetters = new Set();
     const guessedTheWord = false;
     const guessesLeft = 5;
-    const word = Array.from(this.randomWord(category)).map((letter) => ({
+    const initialWord = this.randomWord(category);
+    const word = Array.from(initialWord).map((letter) => ({
       letter,
       disabled: false,
     }));
@@ -30,6 +32,7 @@ class App extends Component {
       guessedTheWord,
       guessesLeft,
       word,
+      initialWord,
     };
   }
   randomCategory(data) {
@@ -51,7 +54,6 @@ class App extends Component {
   addKeyPressListener() {
     document.addEventListener("keydown", (event) => {
       const letter = event.key.toUpperCase();
-      // console.log(letter);
       if (this.state.letters.includes(letter)) {
         this.selectLetter(letter);
       }
@@ -64,7 +66,6 @@ class App extends Component {
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
       const nextState = { ...state };
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter);
-      // console.log(alreadyGuessedLetter);
       if (!alreadyGuessedLetter) {
         nextState.guessedLetters.add(selectedLetter.letter);
         const letter = nextState.letters.find(
@@ -101,10 +102,11 @@ class App extends Component {
     console.log(this.state);
     return (
       <div className='m-4 flex flex-col justify-items-center items-center content-between'>
-        <h1 className='text-center text-4xl font-bold p-2 m-2'>
+        <h1 className='text-center text-4xl font-bold p-2 my-2'>
           Word Guess Game
         </h1>
         <Category category={this.state.category} />
+        <WordImage word={this.state.initialWord} />
         <Word word={this.state.word} />
         <Alphabets letters={this.state.letters} onClick={this.selectLetter} />
         <div className='grid grid-cols-3 gap-2 p-2'>
