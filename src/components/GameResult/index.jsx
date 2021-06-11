@@ -5,11 +5,7 @@ const GameResult = ({ status, guessesLeft }) => {
     ? { descp: "Restart", color: "text-red-600" }
     : { descp: "Guess the Letters", color: "" };
   return (
-    <div
-      className={`text-lg font-medium py-2 px-3 text-center my-auto ${text.color}`}
-    >
-      {text.descp}
-    </div>
+    <div className={`text-lg font-medium p-2 ${text.color}`}>{text.descp}</div>
   );
 };
 export default GameResult;

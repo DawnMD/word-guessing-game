@@ -101,7 +101,7 @@ class App extends Component {
   render() {
     // console.log(this.state);
     return (
-      <div className='m-4 flex flex-col justify-items-center items-center content-between'>
+      <div className='flex flex-col justify-items-center items-center content-between'>
         <h1 className='text-center text-4xl font-bold p-2 my-2'>
           Word Guess Game
         </h1>
@@ -109,7 +109,7 @@ class App extends Component {
         <WordImage word={this.state.initialWord} />
         <Word word={this.state.word} />
         <Alphabets letters={this.state.letters} onClick={this.selectLetter} />
-        <div className='grid grid-cols-3 gap-2 p-2'>
+        <div className='flex justify-between p-2 my-2 md:w-8/12'>
           <GuessRemaining guessesLeft={this.state.guessesLeft} />
           <GameResult
             status={this.state.guessedTheWord}

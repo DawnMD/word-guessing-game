@@ -3,7 +3,7 @@ import React from "react";
 const Letter = ({ disabled, letter, onClick, role }) => {
   return (
     <div
-      className='inline-block m-2 p-1'
+      className='p-1'
       role={role}
       onClick={() => onClick(letter)}
       aria-disabled={disabled ? "true" : false}

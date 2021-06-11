@@ -3,7 +3,7 @@ import Letter from "../Letter";
 // import "./Alphabet.css";
 
 const Alphabet = ({ letters, onClick }) => (
-  <div className='px-4 py-2 text-center md:w-8/12 xl:w-5/12'>
+  <div className='p-2 my-2 flex flex-wrap justify-center md:w-8/12 xl:w-5/12'>
     {[...letters].map((letter, index) => {
       return (
         <Letter
