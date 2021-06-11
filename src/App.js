@@ -63,6 +63,11 @@ class App extends Component {
     this.updateGame(this.state, selectedLetter);
   };
   updateGame = (state, selectedLetter) => {
+    if (state.guessesLeft === 1) {
+      const nextState = { ...state };
+      nextState.letters.map((letter) => (letter.disabled = true));
+      this.setState(nextState);
+    }
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
       const nextState = { ...state };
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter);
@@ -109,11 +114,12 @@ class App extends Component {
         <WordImage word={this.state.initialWord} />
         <Word word={this.state.word} />
         <Alphabets letters={this.state.letters} onClick={this.selectLetter} />
-        <div className='flex justify-between p-2 my-2 md:w-8/12'>
+        <div className='flex justify-between p-2 m-2 max-w-lg md:w-8/12'>
           <GuessRemaining guessesLeft={this.state.guessesLeft} />
           <GameResult
             status={this.state.guessedTheWord}
             guessesLeft={this.state.guessesLeft}
+            originalWord={this.state.initialWord}
           />
           <ActionButton
             clickHandle={this.newGame}

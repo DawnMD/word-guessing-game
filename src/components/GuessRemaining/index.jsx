@@ -1,6 +1,6 @@
 const GuessRemaining = ({ guessesLeft }) => {
   return (
-    <div className='text-lg font-medium p-2'>
+    <div className='text-lg font-medium p-2 m-1'>
       <span className='bg-red-800 rounded-full w-6 h-7 inline-block text-white text-center'>
         {guessesLeft}
       </span>{" "}

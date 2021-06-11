@@ -29,9 +29,7 @@ const renderLetterElement = (letter, disabled, role) => {
   } else if (letter === "-") {
     return <div className='text-5xl w-10 text-center font-light'>{letter}</div>;
   } else if (!disabled) {
-    return (
-      <div className='border-b-2 border-gray-800 w-10 h-5 inline-block'></div>
-    );
+    return <div className='border-b-2 border-gray-800 w-10 h-5 m-1'></div>;
   }
 
   return <div className='text-2xl'>{letter}</div>;
